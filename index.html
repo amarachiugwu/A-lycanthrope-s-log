@@ -1,0 +1,20 @@
+<!Doctype html>
+<script src="journal.js"></script>
+<script src="custom.js"></script>
+
+<body>
+    
+    <script>
+        // some  correlations seem to lie close to zero, filtering the results to show only correlations greater than 0.1 or less than -0.1.
+        for (let event of journalEvents(JOURNAL)) {
+            let correlation = phi(tableFor(event, JOURNAL));
+            if (correlation === 1) {
+                console.log(event + " : ", correlation  + " : TRANSFORMED" );
+            }else if(correlation > 0.1 || correlation < -0.1) {
+                console.log(event + " : ", correlation );
+            }else{}
+        }
+    </script>
+
+</body>
+</html>
